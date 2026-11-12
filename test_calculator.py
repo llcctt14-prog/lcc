@@ -1,4 +1,4 @@
-"""�ö�����ʽ�ͱ߽�����˶Լ��㣬���У�python -m unittest -v��"""
+"""用独立公式和边界情况核对计算，运行：python -m unittest -v。"""
 
 import unittest
 
@@ -16,7 +16,7 @@ class FutureValueTests(unittest.TestCase):
         self.assertAlmostEqual(future_value(10000, 0.06, 2, 500), expected)
 
     def test_end_of_month_contributions(self):
-        # �ױ�Ͷ���Ϣ 11 ���£����һ��Ͷ�벻��Ϣ��
+        # 首笔投入计息 11 个月，最后一笔投入不计息。
         expected = sum(100 * 1.01 ** months for months in range(12))
         self.assertAlmostEqual(future_value(0, 0.12, 1, 100), expected)
 
